@@ -1,5 +1,4 @@
-package com.onenightinn.model.domain;
-
+import com.onenightinn.model.domain.Customer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
