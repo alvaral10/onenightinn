@@ -1,3 +1,4 @@
 # onenightinn
 
-![image](https://github.com/alvaral10/onenightinn/assets/62185501/32318267-f38b-4819-893a-83aafa5537ca)
+![image](https://github.com/alvaral10/onenightinn/assets/62185501/ffa169e0-ed72-4f23-ab74-b85dc9b0be2a)
+
