@@ -4,6 +4,6 @@
 
  # Week 3
 
-![image](https://github.com/alvaral10/onenightinn/assets/62185501/9368ae04-8818-423b-9623-95521dbef358)
+![image](https://github.com/alvaral10/onenightinn/assets/62185501/3a13f405-2c1e-43b3-8acc-529ce4a43131)
 
 ![image](https://github.com/alvaral10/onenightinn/assets/62185501/440a729f-3b3d-4212-aa2b-feb786d8309c)
