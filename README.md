@@ -6,4 +6,4 @@
 
 ![image](https://github.com/alvaral10/onenightinn/assets/62185501/3a13f405-2c1e-43b3-8acc-529ce4a43131)
 
-![image](https://github.com/alvaral10/onenightinn/assets/62185501/440a729f-3b3d-4212-aa2b-feb786d8309c)
+![image](https://github.com/alvaral10/onenightinn/assets/62185501/3f760f1c-f5fb-46b1-851e-fb65e43e55ee)
