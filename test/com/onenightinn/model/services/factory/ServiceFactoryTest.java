@@ -1,11 +1,11 @@
 package  com.onenightinn.model.services.factory;
 
+import com.onenightinn.model.business.exception.ServiceLoadException;
 import com.onenightinn.model.services.loginservice.ILoginService;
 import com.onenightinn.model.services.loginservice.LoginServiceImpl;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.testng.AssertJUnit.assertTrue;
 
 public class ServiceFactoryTest {
 
@@ -14,7 +14,7 @@ public class ServiceFactoryTest {
 
     @BeforeEach
     public void setUp() throws Exception {
-        serviceFactory = new ServiceFactory();
+        serviceFactory = ServiceFactory.getInstance();
     }
 
 
@@ -25,8 +25,17 @@ public class ServiceFactoryTest {
      */
     @Test
     public void testGetLoginService() {
-        ILoginService loginService = serviceFactory.getLoginService();
-        assertTrue(loginService instanceof LoginServiceImpl);
+        ILoginService loginService;
+        try {
+            loginService = (ILoginService) serviceFactory.getService(ILoginService.NAME);
+            Assertions.assertTrue(loginService instanceof LoginServiceImpl);
+            System.out.println("testGetLoginService PASSED");
+        } catch (ServiceLoadException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assertions.fail("ServiceLoadException");
+        }
+
     }
 
 }

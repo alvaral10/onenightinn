@@ -57,7 +57,7 @@ public class Customer implements Serializable {
      * @param emailAddress
      */
     public Customer(String lastName, String firstName, String emailAddress,
-                    String password, String dayTimePhone, String eveningTimePhone) {
+                    String password, String homePhone, String workPhone) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.emailAddress = emailAddress;
@@ -70,6 +70,7 @@ public class Customer implements Serializable {
      * @return the lastName
      */
     public String getLastName() {
+
         return lastName;
     }
 
@@ -78,6 +79,7 @@ public class Customer implements Serializable {
      *            the lastName to set
      */
     public void setLastName(String lastName) {
+
         this.lastName = lastName;
     }
 
@@ -85,6 +87,7 @@ public class Customer implements Serializable {
      * @return the firstName
      */
     public String getFirstName() {
+
         return firstName;
     }
 
@@ -93,6 +96,7 @@ public class Customer implements Serializable {
      *            the firstName to set
      */
     public void setFirstName(String firstName) {
+
         this.firstName = firstName;
     }
 
@@ -100,6 +104,7 @@ public class Customer implements Serializable {
      * @return the emailAddress
      */
     public String getEmailAddress() {
+
         return emailAddress;
     }
 
@@ -108,6 +113,7 @@ public class Customer implements Serializable {
      *            the emailAddress to set
      */
     public void setEmailAddress(String emailAddress) {
+
         this.emailAddress = emailAddress;
     }
 
@@ -115,6 +121,7 @@ public class Customer implements Serializable {
      * @return the password
      */
     public String getPassword() {
+
         return password;
     }
 
@@ -123,6 +130,7 @@ public class Customer implements Serializable {
      *            the password to set
      */
     public void setPassword(String password) {
+
         this.password = password;
     }
 
@@ -130,6 +138,7 @@ public class Customer implements Serializable {
      * @return the homePhone
      */
     public String gethomePhone() {
+
         return homePhone;
     }
 
@@ -138,6 +147,7 @@ public class Customer implements Serializable {
      *            the dayTimePhone to set
      */
     public void setHomePhone(String homePhone) {
+
         this.homePhone = homePhone;
     }
 
@@ -145,6 +155,7 @@ public class Customer implements Serializable {
      * @return the eveningTimePhone
      */
     public String getworkPhone() {
+
         return workPhone;
     }
 
@@ -153,22 +164,27 @@ public class Customer implements Serializable {
      *            the workPhone to set
      */
     public void setworkPhone(String workPhone) {
+
         this.workPhone = workPhone;
     }
 
     public Address getAddress() {
+
         return address;
     }
 
     public void setAddress(Address address) {
+
         this.address = address;
     }
 
     public Itinerary getItinerary() {
+
         return itinerary;
     }
 
     public void setItinerary(Itinerary itinerary) {
+
         this.itinerary = itinerary;
     }
 
