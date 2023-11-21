@@ -289,18 +289,4 @@ public class Customer implements Serializable {
                 + itinerary + "]";
     }
 
-    public static void main(String[] args){
-
-        Address address = new Address();
-        address.setAddress("123 Main St");
-        address.setCity("SpringField");
-        address.setState("OH");
-        address.setZip("1224");
-
-        Itinerary itinerary = new Itinerary("aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa");
-
-        Customer cust = new Customer ("Kitty", "Hello", "hk@sanio.com", "1234", "222", "111", address, itinerary );
-
-        System.out.println (cust);
-    }
 }

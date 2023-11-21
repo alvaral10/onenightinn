@@ -21,6 +21,8 @@ public class ReservationComposite implements Serializable {
     /** Customer's itinerary */
     private Itinerary itinerary;
 
+    private Rooms rentedRooms;
+
     /**
      *
      */
@@ -53,6 +55,14 @@ public class ReservationComposite implements Serializable {
         this.customer = customer;
     }
 
+    public Rooms getRentedRooms(){
+        return rentedRooms;
+    }
+
+    public void setRentedRooms(Rooms rooms){
+        this.rentedRooms = rooms;
+    }
+
     public String toString()
     {
 
@@ -61,6 +71,8 @@ public class ReservationComposite implements Serializable {
                 "\n\nAvailable Rentals :\n" +
                 availableRooms +
                 "\n\nItinerary :\n" +
-                itinerary;
+                itinerary +
+                "\n\nRented Rooms :\n" +
+                rentedRooms;
     }
 }
