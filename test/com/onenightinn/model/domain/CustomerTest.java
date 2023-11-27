@@ -13,7 +13,7 @@ public class CustomerTest {
         /*
          Create a new Customer object before each test
          */
-        customer1 = new Customer("Kitty", "Hello", "hk@sanio.com", "password", "1234567890", "9876543210", null, null);
+        customer1 = new Customer("Kitty", "Hello", "hk@sanio.com", "password");
     }
 
     @Test

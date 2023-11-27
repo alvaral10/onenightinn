@@ -1,7 +1,7 @@
 package com.onenightinn.model.services.registrationservice;
 
 import com.onenightinn.model.domain.Customer;
-import com.onenightinn.model.domain.ReservationComposite;
+import com.onenightinn.model.domain.Composite;
 import com.onenightinn.model.services.exception.RegistrationException;
 
 import java.io.FileOutputStream;
@@ -11,13 +11,13 @@ import java.io.ObjectOutputStream;
 public class RegistrationServiceImpl implements IRegistrationService {
 
 
-    public boolean registerCustomer(ReservationComposite reservationComposite) throws RegistrationException
+    public boolean registerCustomer(Composite Composite) throws RegistrationException
     {
         boolean isRegisteredCustomer = true;
         ObjectOutputStream output = null;
 
         try {
-            Customer customer = reservationComposite.getCustomer();
+            Customer customer = Composite.getCustomer();
 
             if ( customer!= null)
             {

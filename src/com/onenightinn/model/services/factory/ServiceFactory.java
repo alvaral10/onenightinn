@@ -2,7 +2,6 @@ package com.onenightinn.model.services.factory;
 
 import com.onenightinn.model.business.exception.ServiceLoadException;
 import com.onenightinn.model.services.IService;
-import com.onenightinn.model.services.manager.PropertyManager;
 
 public class ServiceFactory {
 
@@ -29,6 +28,15 @@ public class ServiceFactory {
 
     private String getImplName(String serviceName) throws Exception {
 
-        return PropertyManager.getPropertyValue(serviceName);
+        java.util.Properties props = new java.util.Properties();
+
+        String propertyFileLocation = System.getProperty("prop_location");
+
+        System.out.println("Property File Location passed : " + propertyFileLocation);
+        java.io.FileInputStream fis = new java.io.FileInputStream(propertyFileLocation);
+
+        props.load(fis);
+        fis.close();
+        return props.getProperty(serviceName);
     }
 }

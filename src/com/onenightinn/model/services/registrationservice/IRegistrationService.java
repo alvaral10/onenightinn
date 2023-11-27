@@ -1,6 +1,6 @@
 package com.onenightinn.model.services.registrationservice;
 
-import com.onenightinn.model.domain.ReservationComposite;
+import com.onenightinn.model.domain.Composite;
 import com.onenightinn.model.services.IService;
 import com.onenightinn.model.services.exception.RegistrationException;
 public interface IRegistrationService extends IService
@@ -10,6 +10,6 @@ public interface IRegistrationService extends IService
 
     /** Register customer into our application
      * @throws RegistrationException */
-    public boolean registerCustomer(ReservationComposite reservationComposite) throws RegistrationException;
+    public boolean registerCustomer(Composite composite) throws RegistrationException;
 
 }

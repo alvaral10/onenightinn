@@ -38,8 +38,7 @@ public class Customer implements Serializable {
      *
      */
     public Customer(String lastName, String firstName, String emailAddress,
-                    String password, String homePhone, String workPhone,
-                    Address address, Itinerary itinerary) {
+                    String password) {
         super();
         this.lastName = lastName;
         this.firstName = firstName;

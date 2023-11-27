@@ -1,30 +1,36 @@
 package  com.onenightinn.model.services.factory;
 
 import com.onenightinn.model.business.exception.ServiceLoadException;
+import com.onenightinn.model.domain.Customer;
 import com.onenightinn.model.services.loginservice.ILoginService;
 import com.onenightinn.model.services.loginservice.LoginServiceImpl;
-import junit.framework.TestCase;
+import org.junit.Before;
+import org.junit.Test;
 
-public class ServiceFactoryTest extends TestCase {
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
+public class ServiceFactoryTest {
 
     ServiceFactory serviceFactory;
+    Customer customer;
 
-    public void setUp() throws Exception {
+    @Before
+    public void setUp(){
         serviceFactory = ServiceFactory.getInstance();
+        customer = new Customer("Stewie", "Griffin", "family@guy.com", "brian", "706.11.2468", "860.11.1357");
     }
 
-    public void testGetInstance(){
-        assertNotNull(serviceFactory);
-    }
+    @Test
     public void testGetLoginService() {
-
+        ILoginService loginService;
         try {
-            ILoginService loginService = (ILoginService)serviceFactory.getService(ILoginService.NAME);
+            loginService = (ILoginService)serviceFactory.getService(ILoginService.NAME);
             assertTrue(loginService instanceof LoginServiceImpl);
             System.out.println("testGetLoginService PASSED");
         } catch (ServiceLoadException e) {
             e.printStackTrace();
+            fail("ServiceLoadException");
         }
     }
 

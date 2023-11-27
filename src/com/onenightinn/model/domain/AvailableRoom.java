@@ -3,7 +3,7 @@ package com.onenightinn.model.domain;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
-public class AvailableRooms<Room> implements Serializable {
+public class AvailableRoom<Room> implements Serializable {
     /**
      *
      */
@@ -16,40 +16,33 @@ public class AvailableRooms<Room> implements Serializable {
     /** state tax associated with this rental */
     private float stateTax;
 
-    /** holds car objects */
-    private ArrayList<Room> availableRoomsList = new ArrayList<>(1);
+    /** holds rooms objects */
+    private ArrayList<Room> availableRoomList = new ArrayList<Room>();
 
-    /**
-     * ArrayList is not synchronized, so if you need multithreaded access,
-     * consider using:
-     */
-    // List availableRoomsList = Collections.synchronizedList(new
-    // ArrayList(...));
+    public AvailableRoom(){
 
-    public AvailableRooms() {
     }
-
-    public AvailableRooms(float stateTax) {
+    public AvailableRoom(float stateTax) {
         this.stateTax = stateTax;
     }
 
-    public AvailableRooms(boolean available) {
+    public AvailableRoom(boolean available) {
         this.available = available;
     }
 
     /**
      */
-    public AvailableRooms(boolean available, float stateTax) {
+    public AvailableRoom(boolean available, float stateTax) {
         this.available = available;
         this.stateTax = stateTax;
     }
 
     /**
-     * Add each available rental car into the ArrayList
+     * Add each available rental rooms into the ArrayList
      *
      */
     public void addRoom(Room room) {
-        availableRoomsList.add(room);
+        availableRoomList.add(room);
     }
 
     /**
@@ -85,16 +78,16 @@ public class AvailableRooms<Room> implements Serializable {
     /**
      * @return Returns the availableRoomsList.
      */
-    public ArrayList<Room> getAvailableRoomsList() {
-        return availableRoomsList;
+    public ArrayList<Room> getAvailableRoomList() {
+        return availableRoomList;
     }
 
     /**
-     * @param availableRoomsList
+     * @param availableRoomList
      *            The availableRoomsList to set.
      */
-    public void setAvailableRoomsList(ArrayList<Room> availableRoomsList) {
-        this.availableRoomsList = availableRoomsList;
+    public void setAvailableRoomList(ArrayList<Room> availableRoomList) {
+        this.availableRoomList = availableRoomList;
     }
 
     @Override
@@ -102,10 +95,7 @@ public class AvailableRooms<Room> implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + (available ? 1231 : 1237);
-        result = prime
-                * result
-                + ((availableRoomsList == null) ? 0 : availableRoomsList
-                .hashCode());
+        result = prime * result + ((availableRoomList == null) ? 0 : availableRoomList.hashCode());
         result = prime * result + Float.floatToIntBits(stateTax);
         return result;
     }
@@ -118,13 +108,13 @@ public class AvailableRooms<Room> implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        var other = (AvailableRooms) obj;
+        AvailableRoom other = (AvailableRoom) obj;
         if (available != other.available)
             return false;
-        if (availableRoomsList == null) {
-            if (other.availableRoomsList != null)
+        if (availableRoomList == null) {
+            if (other.availableRoomList != null)
                 return false;
-        } else if (!availableRoomsList.equals(other.availableRoomsList))
+        } else if (!availableRoomList.equals(other.availableRoomList))
             return false;
         if (Float.floatToIntBits(stateTax) != Float
                 .floatToIntBits(other.stateTax))
@@ -141,7 +131,7 @@ public class AvailableRooms<Room> implements Serializable {
             stringBuffer.append(stateTax);
             stringBuffer.append("\nAvailable Rooms List: ");
 
-            for (Room room : availableRoomsList) {
+            for (Room room : availableRoomList) {
                 stringBuffer.append(room);
             }
 

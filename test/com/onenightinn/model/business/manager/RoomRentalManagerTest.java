@@ -2,7 +2,7 @@ package com.onenightinn.model.business.manager;
 
 import junit.framework.TestCase;
 
-import com.onenightinn.model.domain.ReservationComposite;
+import com.onenightinn.model.domain.Composite;
 import com.onenightinn.model.domain.Customer;
 import com.onenightinn.model.services.loginservice.ILoginService;
 import com.onenightinn.model.services.registrationservice.IRegistrationService;
@@ -10,7 +10,7 @@ import com.onenightinn.model.services.registrationservice.IRegistrationService;
 public class RoomRentalManagerTest extends TestCase {
 
     private RoomRentalManager roomRentalManager;
-    private ReservationComposite reservationComposite;
+    private Composite composite;
     private Customer customer;
 
 
@@ -21,8 +21,8 @@ public class RoomRentalManagerTest extends TestCase {
         roomRentalManager = RoomRentalManager.getInstance();
 
         customer = new Customer ("Griffin", "Stewie", "family@guy.com", "brian", "706.111.1234","860.111.1234");
-        reservationComposite = new ReservationComposite();
-        reservationComposite.setCustomer(customer);
+        composite = new Composite();
+        composite.setCustomer(customer);
     }
 
 
@@ -31,7 +31,7 @@ public class RoomRentalManagerTest extends TestCase {
      */
     public final void testPerformActionOnRegisterCustomer()
     {
-        boolean action = roomRentalManager.performAction("RegisterCustomer", reservationComposite);
+        boolean action = roomRentalManager.performAction("RegisterCustomer", composite);
         assertTrue(action);
     }
 
@@ -40,7 +40,7 @@ public class RoomRentalManagerTest extends TestCase {
      */
     public final void testPerformActionOnLoginCustomer()
     {
-        boolean action = roomRentalManager.performAction("LoginCustomer", reservationComposite);
+        boolean action = roomRentalManager.performAction("LoginCustomer", composite);
         assertTrue(action);
     }
 
@@ -49,7 +49,7 @@ public class RoomRentalManagerTest extends TestCase {
      *
      */
     public final void testRegisterCustomer() {
-        boolean isRegistered = roomRentalManager.registerCustomer(IRegistrationService.NAME, reservationComposite);
+        boolean isRegistered = roomRentalManager.registerCustomer(IRegistrationService.NAME, composite);
         assertTrue(isRegistered);
     }
 
@@ -57,7 +57,7 @@ public class RoomRentalManagerTest extends TestCase {
      * Test login customer
      */
     public final void testLoginCustomer() {
-        boolean isLoggedIn = roomRentalManager.loginCustomer(ILoginService.NAME, reservationComposite);
+        boolean isLoggedIn = roomRentalManager.loginCustomer(ILoginService.NAME, composite);
         assertTrue(isLoggedIn);
     }
 }

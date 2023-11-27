@@ -1,7 +1,7 @@
 package com.onenightinn.model.services.loginservice;
 
 import com.onenightinn.model.domain.Customer;
-import com.onenightinn.model.domain.ReservationComposite;
+import com.onenightinn.model.domain.Composite;
 import com.onenightinn.model.services.exception.LoginException;
 
 import java.io.FileInputStream;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 public class LoginServiceImpl implements ILoginService {
 
-    public boolean authenticateCustomer(ReservationComposite reservationComposite)
+    public boolean authenticateCustomer(Composite reservationComposite)
             throws LoginException {
 
         boolean isValid = false;

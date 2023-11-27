@@ -3,7 +3,7 @@ package com.onenightinn.model.domain;
 import java.io.Serial;
 import java.io.Serializable;
 
-public class Rooms implements Serializable {
+public class Room implements Serializable {
 
     @Serial
     private static final long serialVersionUID=6688114759172186190L;
@@ -17,11 +17,11 @@ public class Rooms implements Serializable {
     /** Room model */
     private String model;
 
-    public Rooms(){
+    public Room(){
 
     }
 
-    public Rooms(float rate, String hotel, String model){
+    public Room(float rate, String hotel, String model){
 
         super();
         this.rate = rate;
@@ -41,21 +41,37 @@ public class Rooms implements Serializable {
         return model;
     }
 
+    @Override
+    public int hashCode(){
+        final int prime =31;
+        int result =1;
+        result = prime * result + ((hotel == null) ? 0 : hotel.hashCode());
+        result = prime * result + ((model == null) ? 0 : model.hashCode());
+        return result;
+    }
+
     public boolean validate (){
 
-        if (rate == 0.0) return false;
-        if (hotel == null) return false;
-        if (model == null) return false;
+        if (rate == 0.0)
+            return false;
+        if (hotel == null)
+            return false;
+        if (model == null)
+            return false;
 
         return true;
     }
 
-    public boolean equals(Rooms rooms){
+    public boolean equals(Room room){
 
-        if (rate != rooms.rate) return false;
-        if (hotel != rooms.hotel) return false;
-        if (!hotel.equals(rooms.hotel)) return false;
-        if (!model.equals(rooms.model)) return false;
+        if (rate != room.rate)
+            return false;
+        if (hotel != room.hotel)
+            return false;
+        if (!hotel.equals(room.hotel))
+            return false;
+        if (!model.equals(room.model))
+            return false;
 
         return true;
     }

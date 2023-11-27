@@ -1,12 +1,11 @@
 package com.onenightinn.model.business.manager;
 
 import com.onenightinn.model.business.exception.PropertyFileNotFoundException;
-import com.onenightinn.model.domain.ReservationComposite;
+import com.onenightinn.model.domain.Composite;
 import com.onenightinn.model.services.manager.PropertyManager;
 
 public abstract class ManagerSuperType {
-    static
-    {
+    static {
         try
         {
             ManagerSuperType.loadProperties();
@@ -18,25 +17,13 @@ public abstract class ManagerSuperType {
         }
     }
 
-    public abstract boolean performAction(String commandString, ReservationComposite reservationComposite);
+    public abstract boolean performAction(String commandString, Composite composite);
 
-    public static void loadProperties () throws PropertyFileNotFoundException
-    {
+    public static void loadProperties () throws PropertyFileNotFoundException {
 
-        String propertyFileLocation = System.getProperty("prop_location");
-
-        if (propertyFileLocation != null)
-        {
-            // Now that we have the property file location, lets have the
-            // PropertyManager class load it up
-            PropertyManager.loadProperties(propertyFileLocation);
-        }
-        else
-        {
-            System.out.println("Property file location not set. Passed in value is: " + propertyFileLocation + ".");
-            throw new PropertyFileNotFoundException ("Property file location not set", null);
-        }
-
+        System.out.println("---->Inside ManagerSuperType::loadProperties");
+        String propertyFileLocation = "config\\application.properties";
+        PropertyManager.loadProperties(propertyFileLocation);
 
     } //end loadProperties
 }
