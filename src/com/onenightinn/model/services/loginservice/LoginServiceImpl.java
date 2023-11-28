@@ -1,17 +1,18 @@
 package com.onenightinn.model.services.loginservice;
 
 import com.onenightinn.model.domain.Customer;
-import com.onenightinn.model.domain.Composite;
 import com.onenightinn.model.services.exception.LoginException;
+import com.onenightinn.model.domain.Composite;
+
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+
 public class LoginServiceImpl implements ILoginService {
 
-    public boolean authenticateCustomer(Composite reservationComposite)
-            throws LoginException {
+    public boolean authenticateCustomer(Composite composite) throws LoginException {
 
         boolean isValid = false;
         ObjectInputStream input = null;
@@ -19,7 +20,7 @@ public class LoginServiceImpl implements ILoginService {
             input = new ObjectInputStream(new FileInputStream("RegisteredCustomer.out"));
             Customer savedCustomer = (Customer) input.readObject();
 
-            Customer inCustomer = reservationComposite.getCustomer();
+            Customer inCustomer = composite.getCustomer();
             if (inCustomer != null) {
                 if (savedCustomer.equals(inCustomer))
                     isValid = true;
@@ -45,7 +46,7 @@ public class LoginServiceImpl implements ILoginService {
                     e.printStackTrace();
                 }
             }
-        }
+        }//end try/catch/finally
         return isValid;
-    }
+    } //end login
 }

@@ -1,8 +1,8 @@
-package com.onenightinn.view.mainjframe;
+package com.onenightinn.model.view.mainjframe;
 
-import com.onenightinn.view.MessageDialog;
-import com.onenightinn.view.Utils;
-import com.onenightinn.view.registercustomerjframe.RegisterCustomerJFrame;
+import com.onenightinn.model.view.MessageDialog;
+import com.onenightinn.model.view.Utils;
+import com.onenightinn.model.view.registercustomerjframe.RegisterCustomerJFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

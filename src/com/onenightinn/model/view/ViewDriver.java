@@ -1,7 +1,7 @@
-package com.onenightinn.view;
+package com.onenightinn.model.view;
 
-import com.onenightinn.view.mainjframe.MainJFrame;
-import com.onenightinn.view.mainjframe.MainJFrameController;
+import com.onenightinn.model.view.mainjframe.MainJFrameController;
+import com.onenightinn.model.view.mainjframe.MainJFrame;
 
 import javax.swing.*;
 

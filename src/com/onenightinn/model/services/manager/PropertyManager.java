@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyManager {
+
     private static Properties properties;
 
     public static void loadProperties(String propertyFileLocation) throws PropertyFileNotFoundException
@@ -45,11 +46,19 @@ public class PropertyManager {
                 try {
                     sf.close();
                 } catch (IOException e) {
+                    // Can't do much here if exceptions occur, other then logging
                     e.printStackTrace();
                 }
             }
         }
-    }
+    } //end loadProperties()
+
+    /**
+     * This methods returns the Value for the passed key.
+     *
+     * @param key - key whose value needs to be returned
+     * @return String - value for the passed key
+     */
     static public String getPropertyValue (String key)
     {
         return properties.getProperty(key);

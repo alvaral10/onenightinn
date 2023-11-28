@@ -1,4 +1,4 @@
-package com.onenightinn.view.registercustomerjframe;
+package com.onenightinn.model.view.registercustomerjframe;
 
 import com.onenightinn.model.domain.Customer;
 

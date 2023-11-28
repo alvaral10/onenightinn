@@ -1,10 +1,10 @@
-package com.onenightinn.view.registercustomerjframe;
+package com.onenightinn.model.view.registercustomerjframe;
 
 import com.onenightinn.model.business.manager.RoomRentalManager;
 import com.onenightinn.model.domain.Composite;
 import com.onenightinn.model.domain.Customer;
-import com.onenightinn.view.MessageDialog;
-import com.onenightinn.view.Utils;
+import com.onenightinn.model.view.Utils;
+import com.onenightinn.model.view.MessageDialog;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

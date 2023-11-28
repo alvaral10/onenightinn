@@ -7,5 +7,4 @@ public class ServiceLoadException extends Exception
     {
         super(inMessage, inNestedException);
     }
-
 }

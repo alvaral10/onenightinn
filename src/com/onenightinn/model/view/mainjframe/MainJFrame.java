@@ -1,4 +1,4 @@
-package com.onenightinn.view.mainjframe;
+package com.onenightinn.model.view.mainjframe;
 
 import javax.swing.*;
 import java.awt.*;
@@ -53,7 +53,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jMenuBar.add(jFileMenu);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Community Bike Share");
+        setTitle("Hotel Reservation");
         setFont(new Font("Comic Sans MS", 0, 10));
         getContentPane().setLayout(null);
 
@@ -63,13 +63,13 @@ public class MainJFrame extends javax.swing.JFrame {
 
 
         jButtonGetAvailableRoom.setFont(new Font("Comic Sans MS", 1, 11)); // NOI18N
-        jButtonGetAvailableRoom.setText("See Available Bikes");
+        jButtonGetAvailableRoom.setText("See Available Rooms");
         jPanel1.add(jButtonGetAvailableRoom);
         jButtonGetAvailableRoom.setBounds(20, 20, 150, 25);
 
 
         jButtonRegisterCustomer.setFont(new Font("Comic Sans MS", 1, 11)); // NOI18N
-        jButtonRegisterCustomer.setText("Register Rider");
+        jButtonRegisterCustomer.setText("Register Customer");
         jPanel1.add(jButtonRegisterCustomer);
         jButtonRegisterCustomer.setBounds(20, 65, 150, 25);
 
@@ -91,12 +91,12 @@ public class MainJFrame extends javax.swing.JFrame {
         return jExitMenuItem;
     }
 
-    public JButton getGetAvailableBikesButton()
+    public JButton getGetAvailableRoomButton()
     {
         return jButtonGetAvailableRoom;
     }
 
-    public JButton getGetRegisterRiderButton()
+    public JButton getGetRegisterCustomerButton()
     {
         return jButtonRegisterCustomer;
     }

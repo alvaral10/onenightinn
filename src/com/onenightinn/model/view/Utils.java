@@ -1,4 +1,4 @@
-package com.onenightinn.view;
+package com.onenightinn.model.view;
 
 import java.awt.Toolkit;
 import java.awt.Component;

@@ -10,32 +10,45 @@ public class Customer implements Serializable {
     @Serial
     private static final long serialVersionUID = 7661657477853633935L;
 
-    /** Customer last name */
+    /**
+     * Customer last name
+     */
     private String lastName;
 
-    /** Customer first name */
+    /**
+     * Customer first name
+     */
     private String firstName;
 
-    /** Customer email address */
+    /**
+     * Customer email address
+     */
     private String emailAddress;
 
-    /** Customer password */
+    /**
+     * Customer password
+     */
     private String password;
 
-    /** Customer day phone */
+    /**
+     * Customer day phone
+     */
     private String homePhone;
 
-    /** Customer evening phone */
+    /**
+     * Customer evening phone
+     */
     private String workPhone;
 
-    /** Customer address */
+    /**
+     * Customer address
+     */
     private Address address;
 
     private Itinerary itinerary;
 
     /**
      * Copy Constructor
-     *
      */
     public Customer(String lastName, String firstName, String emailAddress,
                     String password) {
@@ -74,8 +87,7 @@ public class Customer implements Serializable {
     }
 
     /**
-     * @param lastName
-     *            the lastName to set
+     * @param lastName the lastName to set
      */
     public void setLastName(String lastName) {
 
@@ -91,8 +103,7 @@ public class Customer implements Serializable {
     }
 
     /**
-     * @param firstName
-     *            the firstName to set
+     * @param firstName the firstName to set
      */
     public void setFirstName(String firstName) {
 
@@ -108,8 +119,7 @@ public class Customer implements Serializable {
     }
 
     /**
-     * @param emailAddress
-     *            the emailAddress to set
+     * @param emailAddress the emailAddress to set
      */
     public void setEmailAddress(String emailAddress) {
 
@@ -125,8 +135,7 @@ public class Customer implements Serializable {
     }
 
     /**
-     * @param password
-     *            the password to set
+     * @param password the password to set
      */
     public void setPassword(String password) {
 
@@ -142,8 +151,7 @@ public class Customer implements Serializable {
     }
 
     /**
-     * @param homePhone
-     *            the dayTimePhone to set
+     * @param homePhone the dayTimePhone to set
      */
     public void setHomePhone(String homePhone) {
 
@@ -159,8 +167,7 @@ public class Customer implements Serializable {
     }
 
     /**
-     * @param workPhone
-     *            the workPhone to set
+     * @param workPhone the workPhone to set
      */
     public void setworkPhone(String workPhone) {
 
@@ -252,7 +259,7 @@ public class Customer implements Serializable {
         } else if (!emailAddress.equals(other.emailAddress))
             return false;
         if (workPhone == null) {
-            if (other.workPhone!= null)
+            if (other.workPhone != null)
                 return false;
         } else if (!workPhone.equals(other.workPhone))
             return false;
@@ -287,5 +294,4 @@ public class Customer implements Serializable {
                 + workPhone + ", address=" + address + ", itinerary="
                 + itinerary + "]";
     }
-
 }

@@ -7,6 +7,7 @@ public class LoginException extends Exception {
     @Serial
     private static final long serialVersionUID = 6009821813727278428L;
 
+
     public LoginException(final String inMessage)
     {
         super(inMessage);

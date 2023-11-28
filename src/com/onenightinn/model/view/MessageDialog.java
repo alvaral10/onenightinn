@@ -1,14 +1,16 @@
-package com.onenightinn.view;
+package com.onenightinn.model.view;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serial;
 
 public class MessageDialog extends JDialog implements ActionListener {
     /**
      *
      */
+    @Serial
     private static final long serialVersionUID = 5669384463178310650L;
     JButton okBtn = new JButton("OK");
     JLabel label = new JLabel();
