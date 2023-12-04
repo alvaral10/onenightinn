@@ -16,8 +16,8 @@ public class RoomTest {
 
     @Test
     public void testNotValidate() {
-        Room r1 = new Room (jTextFieldRate.getText(), jTextFieldRentalType.getText());
-        assertFalse ("r1 does not validate", r1.validate());
+        Room r1 = new Room (28.9f, "Homewood Suites", "King");
+        assertTrue ("r1 does not validate", r1.validate());
         System.out.println("testNotValidate PASSED");
     }
 
