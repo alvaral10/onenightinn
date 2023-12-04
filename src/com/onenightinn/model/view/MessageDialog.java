@@ -23,9 +23,6 @@ public class MessageDialog extends JDialog implements ActionListener {
         okBtn.addActionListener(this);
     }
 
-    /**
-     * Component initialization.
-     */
     private void jbInit() {
         label.setBounds(new Rectangle(56, 15, 197, 40));
         okBtn.setBounds(new Rectangle(114, 70, 68, 23));
@@ -35,12 +32,6 @@ public class MessageDialog extends JDialog implements ActionListener {
         setSize(300, 150);
     }
 
-    /**
-     * Close the dialog on a button event.
-     *
-     * @param actionEvent
-     *            ActionEvent
-     */
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource() == okBtn) {

@@ -17,7 +17,7 @@ public class Room implements Serializable {
     /** Room model */
     private String model;
 
-    public Room(){
+    public Room(String text, String jTextFieldRentalTypeText){
 
     }
 

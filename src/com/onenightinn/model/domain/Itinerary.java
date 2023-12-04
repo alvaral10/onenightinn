@@ -39,7 +39,7 @@ public class Itinerary implements Serializable {
     /**
      *
      */
-    public Itinerary(String aaa, String s, String string, String aaa1, String s1, String string1, String aaa2, String s2, String string2, String aaa3) {
+    public Itinerary() {
 
         // TODO Auto-generated constructor stub
     }
@@ -282,12 +282,6 @@ public class Itinerary implements Serializable {
                 return false;
         } else if (!cityDestination.equals(other.cityDestination))
             return false;
-        if (cityDestinationId == null) {
-            if (other.cityDestinationId != null)
-                return false;
-        } else if (!cityDestinationId
-                .equals(other.cityDestinationId))
-            return false;
         if (checkinDay == null) {
             if (other.checkinDay != null)
                 return false;
@@ -316,25 +310,25 @@ public class Itinerary implements Serializable {
     public String toString()
     {
         StringBuffer strBfr = new StringBuffer();
-        strBfr.append ("fleetRentalPickUp Id:");
+        strBfr.append ("\ncityDestination Id:");
         strBfr.append (cityDestinationId);
         strBfr.append ("\ncityDestination City:");
         strBfr.append (cityDestination);
-        strBfr.append ("\npickUpMonth :");
+        strBfr.append ("\ncheckInMonth :");
         strBfr.append (checkinMonth);
-        strBfr.append ("\npickUpDay :");
+        strBfr.append ("\ncheckInDay :");
         strBfr.append (checkinDay);
-        strBfr.append ("\npickUpYear :");
+        strBfr.append ("\ncheckInYear :");
         strBfr.append (checkinYear);
-        strBfr.append ("\npickUpTime :");
+        strBfr.append ("\ncheckInTime :");
         strBfr.append (checkinTime);
-        strBfr.append ("\ndropOffMonth :");
+        strBfr.append ("\ncheckOutMonth :");
         strBfr.append (checkoutMonth);
-        strBfr.append ("\ndropOffDay :");
+        strBfr.append ("\ncheckOutDay :");
         strBfr.append (checkoutDay);
-        strBfr.append ("\ndropOffYear :");
+        strBfr.append ("\ncheckOutYear :");
         strBfr.append (checkoutYear);
-        strBfr.append ("\ndropOffTime :");
+        strBfr.append ("\ncheckOutTime :");
         strBfr.append (checkoutTime);
         strBfr.append ("\nqtyReservationDays :");
         strBfr.append (qtyReservationDays);

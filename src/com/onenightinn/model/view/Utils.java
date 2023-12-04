@@ -5,10 +5,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 
 public class Utils {
-    /**
-     * Centers the window
-     * @param comp Component
-     */
+
     public static void centerWindow(Component comp) {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 

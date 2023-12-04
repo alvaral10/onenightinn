@@ -9,22 +9,24 @@ import java.awt.event.ActionListener;
 
 public class MainJFrameController implements ActionListener {
 
-    private MainJFrame mainJFrame;
+    private MainJFrame itineraryJFrame;
 
     public MainJFrameController(){
 
     }
 
-    public MainJFrameController (MainJFrame mainJFrame){
+    public MainJFrameController (MainJFrame itineraryJFrame){
 
-        this.mainJFrame = mainJFrame;
+        this.itineraryJFrame = itineraryJFrame;
 
-        mainJFrame.getFileMenuItem().addActionListener(this);
-        mainJFrame.getExitMenuItem().addActionListener(this);
+        itineraryJFrame.getFileMenuItem().addActionListener(this);
+        itineraryJFrame.getExitMenuItem().addActionListener(this);
+        itineraryJFrame.getGetAvailableRoomButton().addActionListener(this);
+        itineraryJFrame.getGetRegisterCustomerButton().addActionListener(this);
 
         // center the frame
-        Utils.centerWindow(mainJFrame);
-        mainJFrame.setVisible(true);
+        Utils.centerWindow(itineraryJFrame);
+        itineraryJFrame.setVisible(true);
     }
 
     public void actionPerformed(ActionEvent event)
@@ -32,10 +34,14 @@ public class MainJFrameController implements ActionListener {
 
         System.out.println ("Inside MainJFrameController::actionPerformed");
 
-        if (event.getSource().equals(mainJFrame.getFileMenuItem()))
+        if (event.getSource().equals(itineraryJFrame.getFileMenuItem()))
             menuSampleOpen_actionPerformed(event);
-        else if (event.getSource().equals(mainJFrame.getExitMenuItem()))
+        else if (event.getSource().equals(itineraryJFrame.getExitMenuItem()))
             menuExit_actionPerformed(event);
+        else if (event.getSource().equals(itineraryJFrame.getGetAvailableRoomButton()))
+            getAvailableRoom_actionPerformed(event);
+        else if (event.getSource().equals(itineraryJFrame.getGetRegisterCustomerButton()))
+            getRegisterCustomer_actionPerformed(event);
     }
 
     void menuSampleOpen_actionPerformed(ActionEvent actionEvent)
@@ -61,7 +67,7 @@ public class MainJFrameController implements ActionListener {
 
     void getAvailableRoom_actionPerformed(ActionEvent actionEvent)
     {
-        System.out.println("Inside MainJFrameController");
+        System.out.println("Inside ItineraryJFrameController");
         MessageDialog dlg = new MessageDialog( "Room Availability", "Not Implemented Yet!");
         Utils.centerWindow(dlg);
         dlg.setModal(true);
