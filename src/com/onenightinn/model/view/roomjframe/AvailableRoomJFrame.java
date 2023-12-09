@@ -1,13 +1,17 @@
 package com.onenightinn.model.view.roomjframe;
 
 import com.onenightinn.model.domain.AvailableRoom;
-import com.onenightinn.model.view.registercustomerjframe.RegisterCustomerJFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serial;
+import java.util.ArrayList;
 
 public class AvailableRoomJFrame extends JFrame {
+
+    @Serial
+    private static final long serialVersionUID = 3320197207777135961L;
 
     JDesktopPane theDesktop = new JDesktopPane();
 
@@ -16,7 +20,9 @@ public class AvailableRoomJFrame extends JFrame {
         super("Available Rooms");
         getContentPane().add(theDesktop);
 
-        this.setSize(500, 500);
+        initComponents();
+
+        this.setSize(300, 250);
         this.setVisible(true);
 
         JMenuBar menuBar = new JMenuBar();
@@ -32,36 +38,16 @@ public class AvailableRoomJFrame extends JFrame {
         fileMenu.add(exitItem);
         menuBar.add(fileMenu);
 
-        JMenu customerMenu = new JMenu("Customer");
-        JMenuItem createCustomerItem = new JMenuItem("Enter Customer");
-        fileMenu.add(createCustomerItem);
-        createCustomerItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                RegisterCustomerJFrame registerCustomerJFrame = new RegisterCustomerJFrame();
-                registerCustomerJFrame.setVisible(true);
-                theDesktop.add(registerCustomerJFrame);
-            }
-        });
-        customerMenu.add(createCustomerItem);
-        menuBar.add(customerMenu);
-
-        JMenu rentalMenu = new JMenu("Rental");
-        JMenuItem createRentalItem = new JMenuItem("Enter Rental");
-        fileMenu.add(createRentalItem);
-        createRentalItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                AvailableRoomJFrame availableRoomJFrame = new AvailableRoomJFrame();
-                availableRoomJFrame.setVisible(true);
-                theDesktop.add(availableRoomJFrame);
-            }
-        });
-        rentalMenu.add(createRentalItem);
-        menuBar.add(rentalMenu);
-
     }
 
-    public static AvailableRoom getSelectedData() {
-        return null;
+    public AvailableRoom getSelectedData() {
+
+        AvailableRoom availableRoom = new AvailableRoom<>(
+
+                jTextFieldRate.getText(),
+                jTextFieldRentalType.getText());
+
+        return availableRoom;
     }
 
     /**
@@ -72,28 +58,29 @@ public class AvailableRoomJFrame extends JFrame {
         jMenuBar = new javax.swing.JMenuBar();
         setJMenuBar(jMenuBar);
         jFileMenu = new javax.swing.JMenu();
-        jDataMenu = new javax.swing.JMenu();
         jFileMenuItem = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabelRate = new javax.swing.JLabel();
         jTextFieldRate = new javax.swing.JTextField();
         jLabelRentalType = new javax.swing.JLabel();
         jTextFieldRentalType = new javax.swing.JTextField();
-        jButtonAvailableRoom = new javax.swing.JButton();
+        jButtonOk = new javax.swing.JButton();
+        jButtonCancel = new javax.swing.JButton();
+
+        ArrayList<String> availableRoomList = new ArrayList<>();
+        availableRoomList.add("Hilton, King, $250");
+        availableRoomList.add("Homewood Suites, King, $250");
+        availableRoomList.add("Hampton Inn, King, $250");
+        availableRoomList.add("Hilton, Queen, $150");
+        availableRoomList.add("Homewood Suites, King, $150");
+        availableRoomList.add("Hampton Inn, Queen, $150");
+
+        jRoomComboBox = new JComboBox<>(availableRoomList.toArray(new String[0]));
 
         jMenuBar.setOpaque(false);
 
         jFileMenu.setText("File");
         jFileMenu.setFont(new java.awt.Font("Times New Roman", 1, 11));
-
-        jDataMenu.setText("Data");
-        jDataMenu.setFont(new java.awt.Font("Times New Roman", 1, 11));
-
-        jFileMenuItem.setFont(new java.awt.Font("Times New Roman", 1, 11));
-        jFileMenuItem.setText("Open From File...");
-        jDataMenu.add(jFileMenuItem);
-
-        jFileMenu.add(jDataMenu);
 
         jMenuBar.add(jFileMenu);
 
@@ -102,41 +89,42 @@ public class AvailableRoomJFrame extends JFrame {
         setFont(new java.awt.Font("Times New Roman", 0, 10));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel1.setBackground(new java.awt.Color(233, 233, 246));
         jPanel1.setFont(new java.awt.Font("Times New Roman", 0, 11));
         jPanel1.setLayout(null);
-
-        jButtonAvailableRoom.setFont(new java.awt.Font("Times New Roman", 1, 15));
-        jButtonAvailableRoom.setLabel("Enter");
-        jButtonAvailableRoom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAvailableRoomActionPerformed(evt);
-            }
-
-        });
-        jPanel1.add(jButtonAvailableRoom);
-        jButtonAvailableRoom.setBounds(20, 200, 150, 25);
 
         jLabelRate.setFont(new java.awt.Font("Times New Roman", 1, 11));
         jLabelRate.setText("Rate:");
         jPanel1.add(jLabelRate);
         jLabelRate.setBounds(76, 10, 70, 17);
 
-        jLabelRentalType.setFont(new java.awt.Font("Times New Roman", 1, 11));
-        jLabelRentalType.setText("Rental Type:");
-        jPanel1.add(jLabelRentalType);
-        jLabelRentalType.setBounds(35, 30, 100, 17);
-
-
         jTextFieldRate.setFont(new java.awt.Font("Times New Roman", 0, 11));
-        jTextFieldRate.setText("$100");
+        jTextFieldRate.setText("$150");
         jPanel1.add(jTextFieldRate);
         jTextFieldRate.setBounds(130, 10, 90, 22);
 
+        jLabelRentalType.setFont(new java.awt.Font("Times New Roman", 1, 11));
+        jLabelRentalType.setText("Room Availability:");
+        jPanel1.add(jLabelRentalType);
+        jLabelRentalType.setBounds(30, 30, 100, 17);
+
         jTextFieldRentalType.setFont(new java.awt.Font("Times New Roman", 0, 11));
-        jTextFieldRentalType.setText("Ski");
+        jTextFieldRentalType.setText("Available");
         jPanel1.add(jTextFieldRentalType);
         jTextFieldRentalType.setBounds(130, 30, 90, 22);
+
+        jButtonCancel.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
+        jButtonCancel.setText("Cancel");
+        jPanel1.add(jButtonCancel);
+        jButtonCancel.setBounds(150, 125, 80, 25);
+
+        jButtonOk.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
+        jButtonOk.setText("Ok");
+        jPanel1.add(jButtonOk);
+        jButtonOk.setBounds(60, 125, 80, 25);
+
+        jPanel1.add(jRoomComboBox);
+        jRoomComboBox.setBounds(65,75,175,25);
 
 
         getContentPane().add(jPanel1);
@@ -145,9 +133,6 @@ public class AvailableRoomJFrame extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAvailableRoomActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonGetAvailableRentalsActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jButtonGetAvailableRentalsActionPerformed
 
     /**
      * Returns jFileMenuItem
@@ -156,44 +141,39 @@ public class AvailableRoomJFrame extends JFrame {
         return jFileMenuItem;
     }
 
-    /**
-     * Returns jDatabaseMenuItem
-     */
-
-    /**
-     * Returns jButtonGetAvailableRentals
-     */
-    public javax.swing.JButton getAvailableRoomButton() {
-        return jButtonAvailableRoom;
+    public javax.swing.JButton getOkButton()
+    {
+        return jButtonOk;
     }
 
-    /**
-     * @param args
-     *            the command line arguments
-     */
+    public javax.swing.JButton getCancelButton()
+    {
+        return jButtonCancel;
+    }
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 AvailableRoomJFrame availableRoomJFrame = new AvailableRoomJFrame();
-                //AvailableRoomJFrame.setSize(350,300);
 
-                //AvailableRoomJFrame.setVisible(true);
-
-                new AvailableRoomJFrame().setVisible(true);
+                //itineraryJFrame.setSize(350,300);
+                //itineraryJFrame.setVisible(true);
+                //new ItineraryJFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAvailableRoom;
-    private javax.swing.JMenu jDataMenu;
     private javax.swing.JMenu jFileMenu;
     private javax.swing.JMenuItem jFileMenuItem;
+    private javax.swing.JButton jButtonCancel;
+    private javax.swing.JButton jButtonOk;
     private javax.swing.JLabel jLabelRate;
     private javax.swing.JLabel jLabelRentalType;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldRate;
     private javax.swing.JTextField jTextFieldRentalType;
+    private javax.swing.JComboBox<String> jRoomComboBox;
     // End of variables declaration//GEN-END:variables
 }

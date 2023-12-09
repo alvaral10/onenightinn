@@ -21,7 +21,8 @@ public class AvailableRoomJFrameController implements ActionListener {
         this.availableRoomJFrame = availableRoomJFrame;
 
         availableRoomJFrame.getFileMenuItem().addActionListener(this);
-        availableRoomJFrame.getAvailableRoomButton().addActionListener(this);
+        availableRoomJFrame.getOkButton().addActionListener(this);
+        availableRoomJFrame.getCancelButton().addActionListener(this);
 
         Utils.centerWindow(availableRoomJFrame);
         availableRoomJFrame.setVisible(true);
@@ -34,8 +35,17 @@ public class AvailableRoomJFrameController implements ActionListener {
 
         if (event.getSource().equals(availableRoomJFrame.getFileMenuItem()))
             menuFileOpen_actionPerformed(event);
-        else if (event.getSource().equals(availableRoomJFrame.getAvailableRoomButton()))
-            getAvailableRoom_actionPerformed(event);
+        else if (event.getSource().equals(availableRoomJFrame.getOkButton()))
+            ok_actionPerformed(event);
+        else if (event.getSource().equals(availableRoomJFrame.getCancelButton()))
+            cancel_actionPerformed(event); {
+
+        }
+    }
+
+    private void cancel_actionPerformed(ActionEvent event) {
+        availableRoomJFrame.setVisible(false);
+        availableRoomJFrame.dispose();
     }
 
     void menuFileOpen_actionPerformed(ActionEvent actionEvent) {
@@ -48,25 +58,15 @@ public class AvailableRoomJFrameController implements ActionListener {
         return;
     } // end menuFileOpen_actionPerformed
 
-    void getAvailableRoom_actionPerformed(ActionEvent actionEvent) {
-        System.out.println("Inside availableRoomJFrameController");
-        MessageDialog dlg = new MessageDialog("Rental Availability", "Searching For Rooms!");
-        Utils.centerWindow(dlg);
-        dlg.setModal(true);
-        dlg.show();
-
-        return;
-    } // end menuFileOpen_actionPerformed
-
-    private void enter_actionPerformed(ActionEvent event) {
-        AvailableRoom availableRoom = AvailableRoomJFrame.getSelectedData();
+    private void ok_actionPerformed(ActionEvent event) {
+        AvailableRoom availableRoom = availableRoomJFrame.getSelectedData();
 
         Composite composite = new Composite();
         composite.setAvailableRoom(availableRoom);
 
         RoomRentalManager roomRentalManager = RoomRentalManager.getInstance();
         if (roomRentalManager != null) {
-            boolean action = roomRentalManager.performAction("RoomRental", composite);
+            boolean action = roomRentalManager.performAction("AvailableRoom", composite);
 
             if (action) {
                 MessageDialog dlg = new MessageDialog("Room Rental Confirmation", "You succesfully entered a rental!");

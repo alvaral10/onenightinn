@@ -19,7 +19,7 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
 
-        this.setSize(465, 300);
+        this.setSize(460, 275);
         this.setVisible(true);
     }
 
@@ -55,16 +55,23 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabelCheckoutDateTime = new javax.swing.JLabel();
         jTextFieldCheckoutDateTime = new javax.swing.JTextField();
 
+        jLabelHotel = new javax.swing.JLabel();
+        jTextFieldHotel = new javax.swing.JTextField();
+        jLabelModel = new javax.swing.JLabel();
+        jTextFieldModel = new javax.swing.JTextField();
+        jLabelRate = new javax.swing.JLabel();
+        jTextFieldRate = new javax.swing.JTextField();
+
         jMenuBar.setNextFocusableComponent(jFileMenu);
         jMenuBar.setOpaque(false);
 
         jFileMenu.setText("File");
-        jFileMenu.setFont(new Font("Comic Sans MS", 1, 11));
+        jFileMenu.setFont(new Font("Times New Roman", 1, 11));
 
-        jFileMenuItem.setFont(new Font("Comic Sans MS", 1, 11));
+        jFileMenuItem.setFont(new Font("Times New Roman", 1, 11));
         jFileMenuItem.setText("Open From File...");
 
-        jExitMenuItem.setFont(new Font("Comic Sans MS", 1, 11));
+        jExitMenuItem.setFont(new Font("Times New Roman", 1, 11));
         jExitMenuItem.setText("Exit");
 
 
@@ -84,12 +91,12 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabelDestinationCity.setFont(new Font("Times New Roman", 1, 11));
         jLabelDestinationCity.setText("Destination City:");
         jPanel1.add(jLabelDestinationCity);
-        jLabelDestinationCity.setBounds(47, 18, 120, 17);
+        jLabelDestinationCity.setBounds(105, 18, 120, 17);
 
         jTextFieldDestinationCity.setFont(new Font("Times New Roman", 0, 11));
         jTextFieldDestinationCity.setText("Hartford");
         jPanel1.add(jTextFieldDestinationCity);
-        jTextFieldDestinationCity.setBounds(140, 15, 90, 22);
+        jTextFieldDestinationCity.setBounds(200, 15, 90, 22);
 
         jLabelCheckinDate.setFont(new java.awt.Font("Times New Roman", 1, 11));
         jLabelCheckinDate.setText("Check-In Date:");
@@ -181,6 +188,35 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1.add(jTextFieldCheckoutDateTime);
         jTextFieldCheckoutDateTime.setBounds(360, 90, 50, 20);
 
+        jLabelHotel.setFont(new java.awt.Font("Times New Roman", 1, 11));
+        jLabelHotel.setText("Hotel:");
+        jPanel1.add(jLabelHotel);
+        jLabelHotel.setBounds(68, 115, 90, 17);
+
+        jTextFieldHotel.setFont(new java.awt.Font("Times New Roman", 0, 11));
+        jTextFieldHotel.setText("Hilton");
+        jPanel1.add(jTextFieldHotel);
+        jTextFieldHotel.setBounds(110, 115, 50, 17);
+
+        jLabelModel.setFont(new java.awt.Font("Times New Roman", 1, 11));
+        jLabelModel.setText("Model:");
+        jPanel1.add(jLabelModel);
+        jLabelModel.setBounds(168, 115, 90, 17);
+
+        jTextFieldModel.setFont(new java.awt.Font("Times New Roman", 0, 11));
+        jTextFieldModel.setText("King");
+        jPanel1.add(jTextFieldModel);
+        jTextFieldModel.setBounds(210, 115, 50, 17);
+
+        jLabelRate.setFont(new java.awt.Font("Times New Roman", 1, 11));
+        jLabelRate.setText("Rate:");
+        jPanel1.add(jLabelRate);
+        jLabelRate.setBounds(270, 115, 90, 17);
+
+        jTextFieldRate.setFont(new java.awt.Font("Times New Roman", 0, 11));
+        jTextFieldRate.setText("$250");
+        jPanel1.add(jTextFieldRate);
+        jTextFieldRate.setBounds(300, 115, 50, 17);
 
         jButtonRegisterCustomer.setFont(new Font("Times New Roman", 1, 11)); // NOI18N
         jButtonRegisterCustomer.setText("Register Customer");
@@ -273,6 +309,10 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCheckinDateTime;
     private javax.swing.JLabel jLabelCheckinDateYear;
 
+    private javax.swing.JLabel jLabelHotel;
+    private javax.swing.JLabel jLabelModel;
+    private javax.swing.JLabel jLabelRate;
+
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldDestinationCity;
@@ -284,4 +324,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCheckoutDateDay;
     private javax.swing.JTextField jTextFieldCheckoutDateYear;
     private javax.swing.JTextField jTextFieldCheckoutDateTime;
+
+
+    private javax.swing.JTextField jTextFieldHotel;
+    private javax.swing.JTextField jTextFieldModel;
+    private javax.swing.JTextField jTextFieldRate;
 }

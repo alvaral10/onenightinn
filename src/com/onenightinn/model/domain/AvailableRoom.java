@@ -19,7 +19,7 @@ public class AvailableRoom<Room> implements Serializable {
     /** holds rooms objects */
     private ArrayList<Room> availableRoomList = new ArrayList<Room>();
 
-    public AvailableRoom(){
+    public AvailableRoom(String text, String jTextFieldLastNameText, String jTextFieldEmailText, String jTextFieldPasswordText, String jTextFieldRentalTypeText){
 
     }
     public AvailableRoom(float stateTax) {
@@ -32,9 +32,9 @@ public class AvailableRoom<Room> implements Serializable {
 
     /**
      */
-    public AvailableRoom(boolean available, float stateTax) {
-        this.available = available;
-        this.stateTax = stateTax;
+    public AvailableRoom(String available, String stateTax) {
+        this.available = Boolean.parseBoolean(available);
+        this.stateTax = Float.parseFloat(stateTax);
     }
 
     /**

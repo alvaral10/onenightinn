@@ -62,7 +62,7 @@ public class RegisterCustomerJFrame extends javax.swing.JFrame {
         jTextFieldFirstName.setBounds(130, 20, 120, 22);
 
         jLabelLastName.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        jLabelLastName.setText("Last Name :");
+        jLabelLastName.setText("Last Name:");
         jPanel1.add(jLabelLastName);
         jLabelLastName.setBounds(40, 50, 70, 17);
 
@@ -72,9 +72,9 @@ public class RegisterCustomerJFrame extends javax.swing.JFrame {
         jTextFieldLastName.setBounds(130, 50, 120, 22);
 
         jLabelEmail.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        jLabelEmail.setText("Email : ");
+        jLabelEmail.setText("Email: ");
         jPanel1.add(jLabelEmail);
-        jLabelEmail.setBounds(70, 80, 80, 17);
+        jLabelEmail.setBounds(40, 80, 80, 17);
 
         jTextFieldEmail.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jTextFieldEmail.setText("family@guy.com");
@@ -82,7 +82,7 @@ public class RegisterCustomerJFrame extends javax.swing.JFrame {
         jTextFieldEmail.setBounds(130, 80, 120, 20);
 
         jLabelCheckinDateDay.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        jLabelCheckinDateDay.setText("Home Phone : ");
+        jLabelCheckinDateDay.setText("Home Phone: ");
         jPanel1.add(jLabelCheckinDateDay);
         jLabelCheckinDateDay.setBounds(40, 140, 70, 17);
 
@@ -92,9 +92,9 @@ public class RegisterCustomerJFrame extends javax.swing.JFrame {
         jTextFieldHomePhone.setBounds(130, 140, 120, 20);
 
         jLabelCheckoutDateDay.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        jLabelCheckoutDateDay.setText("Work Phone : ");
+        jLabelCheckoutDateDay.setText("Work Phone: ");
         jPanel1.add(jLabelCheckoutDateDay);
-        jLabelCheckoutDateDay.setBounds(20, 170, 100, 17);
+        jLabelCheckoutDateDay.setBounds(40, 170, 100, 17);
 
         jTextFieldWorkPhone.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jTextFieldWorkPhone.setText("777.777.7777");
@@ -102,9 +102,9 @@ public class RegisterCustomerJFrame extends javax.swing.JFrame {
         jTextFieldWorkPhone.setBounds(130, 170, 120, 20);
 
         jLabelPassword.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        jLabelPassword.setText("Password : ");
+        jLabelPassword.setText("Password: ");
         jPanel1.add(jLabelPassword);
-        jLabelPassword.setBounds(50, 110, 90, 17);
+        jLabelPassword.setBounds(40, 110, 90, 17);
 
         jTextFieldPassword.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jTextFieldPassword.setText("brian");

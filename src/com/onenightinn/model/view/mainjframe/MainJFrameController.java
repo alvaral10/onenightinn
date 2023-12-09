@@ -1,8 +1,8 @@
 package com.onenightinn.model.view.mainjframe;
 
-import com.onenightinn.model.view.MessageDialog;
 import com.onenightinn.model.view.Utils;
 import com.onenightinn.model.view.registercustomerjframe.RegisterCustomerJFrame;
+import com.onenightinn.model.view.roomjframe.AvailableRoomJFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,24 +34,12 @@ public class MainJFrameController implements ActionListener {
 
         System.out.println ("Inside MainJFrameController::actionPerformed");
 
-        if (event.getSource().equals(itineraryJFrame.getFileMenuItem()))
-            menuSampleOpen_actionPerformed(event);
-        else if (event.getSource().equals(itineraryJFrame.getExitMenuItem()))
+        if (event.getSource().equals(itineraryJFrame.getExitMenuItem()))
             menuExit_actionPerformed(event);
         else if (event.getSource().equals(itineraryJFrame.getGetAvailableRoomButton()))
             getAvailableRoom_actionPerformed(event);
         else if (event.getSource().equals(itineraryJFrame.getGetRegisterCustomerButton()))
             getRegisterCustomer_actionPerformed(event);
-    }
-
-    void menuSampleOpen_actionPerformed(ActionEvent actionEvent)
-    {
-
-        MessageDialog dlg = new MessageDialog( "Example", " Nothing to see here!");
-        Utils.centerWindow(dlg);
-        dlg.setModal(true);
-        dlg.show();
-
     }
 
 
@@ -65,13 +53,10 @@ public class MainJFrameController implements ActionListener {
         System.exit(1);
     }
 
-    void getAvailableRoom_actionPerformed(ActionEvent actionEvent)
+    void getAvailableRoom_actionPerformed(ActionEvent event)
     {
-        System.out.println("Inside ItineraryJFrameController");
-        MessageDialog dlg = new MessageDialog( "Room Availability", "Not Implemented Yet!");
-        Utils.centerWindow(dlg);
-        dlg.setModal(true);
-        dlg.show();
+        AvailableRoomJFrame availableRoomJFrame = new AvailableRoomJFrame();
+        availableRoomJFrame.show();
 
     }
 
